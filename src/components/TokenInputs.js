@@ -19,11 +19,11 @@ const TokenInputs = (props) => {
 
                     <Box sx={{ display: "flex", flexDirection: 'column', justifyContent: 'center', width: '30%' }}>
                         <Box className='red-container'>Generate Red Token</Box>
-                        <TextField label="No. of Red Tokens" variant="outlined" />
+                        <TextField label="No. of Red Tokens" variant="outlined" onChange={(e) =>{props.data.setRedToken(e.target.value)}}/>
                         <br />
-                        <TextField label="Red token prefix" variant="outlined" />
+                        <TextField label="Red token prefix" variant="outlined" onChange={(e) =>{props.data.serRedPrefix(e.target.value)}}/>
                         <br />
-                        <TextField label="Red token per row" variant="outlined" />
+                        <TextField label="Red token per row" variant="outlined" onChange={(e) =>{props.data.setRerRow(e.target.value)}}/>
                     </Box>
 
                 </form>

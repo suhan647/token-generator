@@ -6,17 +6,48 @@ import Box from '@mui/material/Box';
 
 const Token = () => {
 
+    //blue tokens
     const [blueToken, setBlueToken] = useState(0)
     const [bluePrefix, setBluePrefix] = useState('')
     const [blueRow, setBlueRow] = useState(0)
     const [blueArray, setBlueArray] = useState([])
 
+    
+    //red tokens
+    const [redToken, setRedToken] = useState(0)
+    const [redPrefix, serRedPrefix] = useState('')
+    const [redRow, setRerRow] = useState(0)
+    const [redArray, setredArray] = useState([])
+
+    let data = {
+        redToken,
+        setRedToken,
+        redPrefix,
+        serRedPrefix,
+        redRow,
+        setRerRow
+    }
+
+    
+
+    console.log(redToken);
+
     let bluearr = []
+    let redarr = []
+
     const HandleGenerate = () => {
 
         for (let i = 1; i <= blueToken; i++) {
             bluearr.push(i)
             setBlueArray([...bluearr])
+            serRedPrefix(redPrefix)
+        }
+        console.log([blueArray]);
+
+        //red
+        for (let i = 1; i <= redToken; i++) {
+            redarr.push(i)
+            setredArray([...redarr])
             setBluePrefix(bluePrefix)
         }
         console.log([blueArray]);
@@ -25,13 +56,14 @@ const Token = () => {
 
     const clear = () => {
         setBlueArray([])
+        setredArray([])
         console.log(blueArray);
     }
 
     return (
         <>
             <div className='heading'>Token Generator Application</div>
-            <TokenInputs HandleGenerate={HandleGenerate} blueToken={blueToken} setBlueToken={setBlueToken} bluePrefix={bluePrefix} setBluePrefix={setBluePrefix} blueRow={blueRow} setBlueRow={setBlueRow} clear={clear} />
+            <TokenInputs HandleGenerate={HandleGenerate} blueToken={blueToken} setBlueToken={setBlueToken} bluePrefix={bluePrefix} setBluePrefix={setBluePrefix} blueRow={blueRow} setBlueRow={setBlueRow} clear={clear} data={data}/>
 
             <Box sx={{ marginLeft: "25%" }}>
                 <Box sx={{ marginTop: "40px" }}>
@@ -51,15 +83,24 @@ const Token = () => {
                 <Box className='margin' marginBottom='20%'>
 
                     <Grid container >
-                        <Grid className='margin' item xs={2}>
+                        {redArray.map((token,i) => {
+                            return (
+                                <>
+                                 <Grid key = {i} className='margin' item xs={2}>
+                            <div className='red-boxes'>{redPrefix}{token}</div>
+                        </Grid>
+                                </>
+                            );
+                        })}
+                       
+
+
+                        {/* <Grid className='margin' item xs={2}>
                             <div className='red-boxes'>xs=2</div>
                         </Grid>
                         <Grid className='margin' item xs={2}>
                             <div className='red-boxes'>xs=2</div>
-                        </Grid>
-                        <Grid className='margin' item xs={2}>
-                            <div className='red-boxes'>xs=2</div>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                 </Box>
             </Box>
