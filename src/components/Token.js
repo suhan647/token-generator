@@ -12,7 +12,7 @@ const Token = () => {
     const [blueRow, setBlueRow] = useState(0)
     const [blueArray, setBlueArray] = useState([])
 
-    
+
     //red tokens
     const [redToken, setRedToken] = useState(0)
     const [redPrefix, serRedPrefix] = useState('')
@@ -28,7 +28,7 @@ const Token = () => {
         setRerRow
     }
 
-    
+
 
     console.log(redToken);
 
@@ -63,7 +63,7 @@ const Token = () => {
     return (
         <>
             <div className='heading'>Token Generator Application</div>
-            <TokenInputs HandleGenerate={HandleGenerate} blueToken={blueToken} setBlueToken={setBlueToken} bluePrefix={bluePrefix} setBluePrefix={setBluePrefix} blueRow={blueRow} setBlueRow={setBlueRow} clear={clear} data={data}/>
+            <TokenInputs HandleGenerate={HandleGenerate} blueToken={blueToken} setBlueToken={setBlueToken} bluePrefix={bluePrefix} setBluePrefix={setBluePrefix} blueRow={blueRow} setBlueRow={setBlueRow} clear={clear} data={data} />
 
             <Box sx={{ marginLeft: "25%" }}>
                 <Box sx={{ marginTop: "40px" }}>
@@ -71,7 +71,7 @@ const Token = () => {
                         {blueArray.map((token, i) => {
                             return (
                                 <>
-                                    <Grid key={i} item xs={2}>
+                                    <Grid key={i} item xs={3}>
                                         <div className='blue-boxes'>{bluePrefix}{token}</div>
                                     </Grid>
                                 </>
@@ -83,24 +83,15 @@ const Token = () => {
                 <Box className='margin' marginBottom='20%'>
 
                     <Grid container >
-                        {redArray.map((token,i) => {
+                        {redArray.map((token, i) => {
                             return (
                                 <>
-                                 <Grid key = {i} className='margin' item xs={2}>
-                            <div className='red-boxes'>{redPrefix}{token}</div>
-                        </Grid>
+                                    <Grid key={i} className='margin' item xs={3}>
+                                        <div className='red-boxes'>{redPrefix}{token}</div>
+                                    </Grid>
                                 </>
                             );
                         })}
-                       
-
-
-                        {/* <Grid className='margin' item xs={2}>
-                            <div className='red-boxes'>xs=2</div>
-                        </Grid>
-                        <Grid className='margin' item xs={2}>
-                            <div className='red-boxes'>xs=2</div>
-                        </Grid> */}
                     </Grid>
                 </Box>
             </Box>
