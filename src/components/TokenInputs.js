@@ -8,6 +8,7 @@ const TokenInputs = (props) => {
         <>
             <Box>
                 <form className='container'>
+                    
                     <Box sx={{ display: "flex", flexDirection: 'column', justifyContent: 'center', marginRight: '30%', color: 'blue' }}>
                         <Box className='blue-container'>Generate Blue Token</Box>
                         <TextField label="No. of blue Tokens" variant="outlined" onChange={(e) => { props.setBlueToken(e.target.value) }} />
