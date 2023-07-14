@@ -11,6 +11,7 @@ const Token = () => {
     const [bluePrefix, setBluePrefix] = useState('')
     const [blueRow, setBlueRow] = useState(0)
     const [blueArray, setBlueArray] = useState([])
+    const [state, setState] = useState()
 
     //red tokens
     const [redToken, setRedToken] = useState(0)
